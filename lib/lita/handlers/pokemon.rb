@@ -8,7 +8,7 @@ module Lita
       def throw(request)
         random_number = rand(001..778)
         name = get_pokemon(random_number)
-        request.reply "http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/#{random_number}.png"
+        request.reply "http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/#{random_number.to_s.rjust(3, "0")}.png"
         request.reply "I choose you #{name}!"
       end
 
@@ -18,7 +18,7 @@ module Lita
           request.reply "You've picked a too high of a pokedex number!"
         else
           name = get_pokemon(pokemon_number)
-          request.reply "http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/#{pokemon_number}.png"
+          request.reply "http://assets14.pokemon.com/assets/cms2/img/pokedex/detail/#{pokemon_number.to_s.rjust(3, "0")}.png"
           request.reply "I choose you #{name}!"
         end
       end
